@@ -4,6 +4,7 @@ import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 import com.itextpdf.text.pdf.*;
 import mdlaf.*;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -14,6 +15,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Hello world!
@@ -51,26 +56,8 @@ public class App
                 file.add(export_file);
                 import_file.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        JFileChooser chooser = new JFileChooser();
-                        chooser.setMinimumSize(new Dimension(300,300));
-                        FileFilter filter = new FileNameExtensionFilter("PDF and DOCX","pdf","docx");
-                        chooser.setFileFilter(filter);
-                        chooser.showDialog(frame,"Import");
-                        pdfFile = chooser.getSelectedFile();
-                        String path = pdfFile.getAbsolutePath();
-                        System.out.println("Path:"+path);
-                        PdfReader reader;
-                        try{
-                            reader = new PdfReader(path);
-                            String s = PdfTextExtractor.getTextFromPage(reader,1);
-                            System.out.println(s);
-                        }
-                        catch (Exception ex){
-                            ex.printStackTrace();
-                        }
-
-
-
+                        doStuffOnText(frame);
+                        JOptionPane.showMessageDialog(frame, "Text parsed successfully!");
                     }
                 });
 
@@ -101,5 +88,34 @@ public class App
                 frame.setVisible(true);
             }
         });
+    }
+
+    private static void doStuffOnText(JFrame f) {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setMinimumSize(new Dimension(300,300));
+        FileFilter filter = new FileNameExtensionFilter("PDF and DOCX","pdf","docx");
+        chooser.setFileFilter(filter);
+        chooser.showDialog(f,"Import");
+        pdfFile = chooser.getSelectedFile();
+        String path = pdfFile.getAbsolutePath();
+        System.out.println("Path:"+path);
+        PdfReader reader;
+        try{
+            reader = new PdfReader(path);
+            String s = PdfTextExtractor.getTextFromPage(reader,1);
+            List<String> userData = Arrays.asList(s.split("Technical Skills"));
+            Iterator<String> itr = userData.iterator();
+            System.out.println(userData.get(1));
+
+
+
+
+
+
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+
     }
 }
