@@ -1,7 +1,8 @@
 package ZiyadBhombal;
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.*;
+import com.itextpdf.text.pdf.PdfReader;
+import com.itextpdf.text.pdf.parser.PdfTextExtractor;
+import com.itextpdf.text.pdf.*;
 import mdlaf.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
@@ -58,7 +59,16 @@ public class App
                         pdfFile = chooser.getSelectedFile();
                         String path = pdfFile.getAbsolutePath();
                         System.out.println("Path:"+path);
-//                        PdfReader reader = new PdfReader(path);
+                        PdfReader reader;
+                        try{
+                            reader = new PdfReader(path);
+                            String s = PdfTextExtractor.getTextFromPage(reader,1);
+                            System.out.println(s);
+                        }
+                        catch (Exception ex){
+                            ex.printStackTrace();
+                        }
+
 
 
                     }
