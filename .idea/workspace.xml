@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d3c0553-06d9-4628-9fab-9e00d29bce8c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/ResumeParser.iml" afterPath="$PROJECT_DIR$/ResumeParser.iml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ZiyadBhombal/App.java" afterPath="$PROJECT_DIR$/src/main/java/ZiyadBhombal/App.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,12 +22,12 @@
     </SUITE>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
+            <state relative-caret-position="378">
+              <caret line="101" column="17" lean-forward="true" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -33,17 +36,16 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ZiyadBhombal/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="105" column="79" lean-forward="false" selection-start-line="105" selection-start-column="79" selection-end-line="105" selection-end-column="79" />
+            <state relative-caret-position="408">
+              <caret line="136" column="120" lean-forward="false" selection-start-line="136" selection-start-column="120" selection-end-line="136" selection-end-column="120" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#671#695#0" expanded="true" />
-                <element signature="e#841#2840#0" expanded="true" />
-                <element signature="e#1730#1994#0" expanded="true" />
-                <element signature="e#1993#1994#0" expanded="true" />
-                <element signature="e#2037#2260#0" expanded="true" />
-                <element signature="e#2259#2260#0" expanded="true" />
-                <element signature="e#2839#2840#0" expanded="true" />
+                <element signature="e#1037#3741#0" expanded="true" />
+                <element signature="e#1932#2895#0" expanded="true" />
+                <element signature="e#2894#2895#0" expanded="true" />
+                <element signature="e#2938#3161#0" expanded="true" />
+                <element signature="e#3160#3161#0" expanded="true" />
+                <element signature="e#3740#3741#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,7 +93,7 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -104,54 +106,7 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ResumeParser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResumeParser" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResumeParser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResumeParser" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResumeParser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResumeParser" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResumeParser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResumeParser" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResumeParser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResumeParser" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ResumeParser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ResumeParser" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ZiyadBhombal" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
@@ -288,8 +243,8 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.App" />
-      <item index="1" class="java.lang.String" itemvalue="JAR Application.material-ui-swing.jar" />
+      <item index="0" class="java.lang.String" itemvalue="JAR Application.material-ui-swing.jar" />
+      <item index="1" class="java.lang.String" itemvalue="Application.App" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -325,28 +280,28 @@
     <frame x="0" y="0" width="1366" height="724" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3987034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -361,35 +316,49 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar:///usr/lib/jvm/java-9-oracle/lib/src.zip!/java.desktop/javax/swing/filechooser/FileNameExtensionFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="50" column="13" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
+        <state relative-caret-position="378">
+          <caret line="101" column="17" lean-forward="true" selection-start-line="101" selection-start-column="17" selection-end-line="101" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/itextpdf/itextpdf/5.5.13/itextpdf-5.5.13.jar!/com/itextpdf/text/pdf/parser/PdfTextExtractor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ZiyadBhombal/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="105" column="79" lean-forward="false" selection-start-line="105" selection-start-column="79" selection-end-line="105" selection-end-column="79" />
+        <state relative-caret-position="408">
+          <caret line="136" column="120" lean-forward="false" selection-start-line="136" selection-start-column="120" selection-end-line="136" selection-end-column="120" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#671#695#0" expanded="true" />
-            <element signature="e#841#2840#0" expanded="true" />
-            <element signature="e#1730#1994#0" expanded="true" />
-            <element signature="e#1993#1994#0" expanded="true" />
-            <element signature="e#2037#2260#0" expanded="true" />
-            <element signature="e#2259#2260#0" expanded="true" />
-            <element signature="e#2839#2840#0" expanded="true" />
+            <element signature="e#1037#3741#0" expanded="true" />
+            <element signature="e#1932#2895#0" expanded="true" />
+            <element signature="e#2894#2895#0" expanded="true" />
+            <element signature="e#2938#3161#0" expanded="true" />
+            <element signature="e#3160#3161#0" expanded="true" />
+            <element signature="e#3740#3741#0" expanded="true" />
           </folding>
         </state>
       </provider>
