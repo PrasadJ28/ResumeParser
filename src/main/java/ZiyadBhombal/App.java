@@ -1,17 +1,13 @@
 package ZiyadBhombal;
-import com.itextpdf.kernel.pdf.*;
+
 import com.itextpdf.text.pdf.PdfReader;
-import com.itextpdf.text.pdf.parser.LocationTextExtractionStrategy;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
-import com.itextpdf.text.pdf.*;
 import com.itextpdf.text.pdf.parser.SimpleTextExtractionStrategy;
 import mdlaf.*;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
+import opennlp.tools.tokenize.SimpleTokenizer;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.text.Document;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,7 +17,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -36,6 +31,20 @@ public class App
     static int RESULT_FAILED = 0;
     static int RESULT_UNDEFINED=13;
 
+    static List<String> Qualifications = Arrays.asList("educational","qualifications","academic","academics");
+
+    static List<String> PersonalDetails = Arrays.asList("personal","details");
+
+    static List<String> Skills = Arrays.asList("languages","programming");
+
+    static List<String> Languages = Arrays.asList("java","python","c","c++","html","css","sql");
+
+
+    public static void p(String str){
+        System.out.println(str);
+    }
+
+
 
 
 
@@ -43,12 +52,6 @@ public class App
     {
         EventQueue.invokeAndWait(new Runnable() {
             public void run() {
-//                try{
-//                    UIManager.setLookAndFeel(new MaterialLookAndFeel());
-//                }
-//                catch (UnsupportedLookAndFeelException e){
-//                    e.printStackTrace();
-//                }
 
                 final JFrame frame = new JFrame("Test Window");
                 frame.setMinimumSize(new Dimension(600,400));
@@ -67,8 +70,6 @@ public class App
                 file.add(export_file);
                 import_file.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-//                        doStuffOnText(frame);
-//                        JOptionPane.showMessageDialog(frame, "Text parsed successfully!");
                         JFileChooser chooser = new JFileChooser();
                         chooser.setMinimumSize(new Dimension(400,600));
                         FileFilter f = new FileNameExtensionFilter("Pdf and Docx","pdf","docx");
@@ -132,36 +133,13 @@ public class App
 
             System.out.println("Finished writing to dump");
             File file = new File("/home/ziyadbhombal/Documents/temp.txt");
-            System.out.println("Size of dump on disk: "+file.getTotalSpace());
 
             List<String> techSkills,personalDetails,qualifications;
 
 
             techSkills = findTechnicalSkills();
-            qualifications = findQualifications();
             personalDetails = findPersonalDetails();
-
-
-            BufferedWriter newWriter = new BufferedWriter(new FileWriter("/home/ziyadbhombal/Documents/result.txt",false));
-            newWriter.write("PersonalDetails:");
-            newWriter.newLine();
-            for(String s : personalDetails){
-                newWriter.write(s);
-            }
-            newWriter.newLine();
-            newWriter.write("TechnicalSkills:");
-            newWriter.newLine();
-            for(String s : techSkills){
-                newWriter.write(s);
-            }
-            newWriter.newLine();
-            newWriter.write("EducationalQualifications:");
-            newWriter.newLine();
-            for(String s : qualifications){
-                newWriter.write(s);
-            }
-            newWriter.close();
-
+            qualifications = findQualifications();
             return RESULT_OK;
 
         }
@@ -171,85 +149,75 @@ public class App
         return RESULT_FAILED;
     }
 
-    private static List<String> findPersonalDetails() {
+
+    public static String[] getTokens(String fileData,boolean Do){
         try {
-            String rawFile = new String(Files.readAllBytes(Paths.get("/home/ziyadbhombal/Documents/temp.txt")));
-            String parsePersonalDetailsFrom = rawFile.split("Personal Information")[1];
-            List<String> personalDetails = Arrays.asList(parsePersonalDetailsFrom.split("\\s|\\n"));
-
-            for(String s: personalDetails){
-                System.out.println("Has details:"+s);
-            }
-            return personalDetails;
-        }
-        catch (IOException ex){
-            ex.printStackTrace();
-            return null;
-        }
-    }
-
-    private static List<String> findQualifications() {
-        try{
-            String rawFile = new String(Files.readAllBytes(Paths.get("/home/ziyadbhombal/Documents/temp.txt")));
-            String parseQualificationsFrom = rawFile.split("Educational Qualifications")[1];
-            String[] strArray = parseQualificationsFrom.split("[\\s\\n]");
-            List<String> educationalQualifications = new ArrayList<>();
-
-            int captureIndex=99;
-            for(int ix=0;ix<strArray.length;ix++){
-                if(strArray[ix].matches("Project :|Project")){
-                    captureIndex=ix;
+//            String fileData = new String(Files.readAllBytes(Paths.get("logs/temp.txt")));
+            SimpleTokenizer tokenizer = SimpleTokenizer.INSTANCE;
+            String[] tokens = tokenizer.tokenize(fileData);
+            if(Do){
+                for(String sr : tokens){
+                    p("Token: "+sr);
                 }
             }
 
-            for (int ix=0;ix<captureIndex;ix++){
-                educationalQualifications.add(strArray[ix]);
-            }
 
-            captureIndex = educationalQualifications.indexOf("Project");
-            System.out.println(captureIndex);
 
-            educationalQualifications = educationalQualifications.subList(0,captureIndex);
-
-            for (String s : educationalQualifications){
-                System.out.println("Has edu: "+s);
-            }
-
-            return educationalQualifications;
+            return tokens;
 
 
         }
-        catch (IOException ex){
+        catch(Exception ex){
             ex.printStackTrace();
             return null;
         }
     }
+
+
 
     private static List<String> findTechnicalSkills() {
         try{
-            String rawFile = new String(Files.readAllBytes(Paths.get("/home/ziyadbhombal/Documents/temp.txt")));
-            String parseTechSkillFrom = rawFile.split("Technical Skills")[1];
-            String[] strArray = parseTechSkillFrom.split("[\\s\\n]");
-            List<String> technicalSkills= new ArrayList<>();
-            int caputeIndex=99;
-            for(int ix = 0; ix<strArray.length;ix++){
-                if (strArray[ix].contains("Extra-Curricular")){
-                    caputeIndex=ix;
-
+            String convertedPdfFile = new String(Files.readAllBytes(Paths.get("/home/ziyadbhombal/Documents/temp.txt")));
+            String[] stringArrayOfWords = getTokens(convertedPdfFile,false);
+//            find starting point for scanning text
+            for(String s : stringArrayOfWords){
+                p(s);
+            }
+            int indexOfFirstMatchedKeyword=0;
+            for(String eachWord : stringArrayOfWords){
+                if(Skills.contains(eachWord.toLowerCase())){
+                    break;
                 }
+                indexOfFirstMatchedKeyword++;
             }
 
-            for (int ix = 0;ix<caputeIndex;ix++){
-                if(!strArray[ix].equals("\\s")||!strArray[ix].equals("")){
-                    technicalSkills.add(strArray[ix]);
+//            find ending point for scanning text
+            List<String> listOfExcludedCorpus = new ArrayList<>(PersonalDetails.size()+Qualifications.size());
+            listOfExcludedCorpus.addAll(PersonalDetails);
+            listOfExcludedCorpus.addAll(Qualifications);
+            int endPoint=indexOfFirstMatchedKeyword;
+            for(int ix =indexOfFirstMatchedKeyword;ix<stringArrayOfWords.length;ix++){
+                if(listOfExcludedCorpus.contains(stringArrayOfWords[ix].toLowerCase())){
+                    break;
                 }
-
+                endPoint = ix;
             }
+            p("Starting point "+indexOfFirstMatchedKeyword);
+            p("Ending point "+endPoint);
+            p("Size of array "+stringArrayOfWords.length);
 
-            for (String s : technicalSkills){
-                System.out.println("Has: "+s);
+            BufferedWriter wr = new BufferedWriter(new FileWriter("logs/skills.txt",false));
+            for (int ix =indexOfFirstMatchedKeyword ;ix<=endPoint; ix++){
+                wr.write(stringArrayOfWords[ix]);
+                wr.write(" ");
             }
-            return technicalSkills;
+            wr.flush();
+            wr.close();
+
+
+
+
+            return null;
 
 
 
@@ -259,4 +227,105 @@ public class App
             return null;
         }
     }
+    private static List<String> findQualifications() {
+        try{
+            String convertedPdfFile = new String(Files.readAllBytes(Paths.get("/home/ziyadbhombal/Documents/temp.txt")));
+            String[] stringArrayOfWords = getTokens(convertedPdfFile,false);
+//            find starting point for scanning text
+            for(String s : stringArrayOfWords){
+                p(s);
+            }
+            int indexOfFirstMatchedKeyword=0;
+            for(String eachWord : stringArrayOfWords){
+                if(Qualifications.contains(eachWord.toLowerCase())){
+                    break;
+                }
+                indexOfFirstMatchedKeyword++;
+            }
+
+//            find ending point for scanning text
+            List<String> listOfExcludedCorpus = new ArrayList<>(PersonalDetails.size()+Qualifications.size());
+            listOfExcludedCorpus.addAll(PersonalDetails);
+            listOfExcludedCorpus.addAll(Skills);
+            int endPoint=indexOfFirstMatchedKeyword;
+            for(int ix =indexOfFirstMatchedKeyword;ix<stringArrayOfWords.length;ix++){
+                if(listOfExcludedCorpus.contains(stringArrayOfWords[ix].toLowerCase())){
+                    break;
+                }
+                endPoint = ix;
+            }
+            p("Starting point "+indexOfFirstMatchedKeyword);
+            p("Ending point "+endPoint);
+            p("Size of array "+stringArrayOfWords.length);
+
+            BufferedWriter wr = new BufferedWriter(new FileWriter("logs/quals.txt",false));
+            for (int ix =indexOfFirstMatchedKeyword ;ix<=endPoint; ix++){
+                wr.write(stringArrayOfWords[ix]);
+                wr.write(" ");
+            }
+            wr.flush();
+            wr.close();
+
+
+
+
+            return null;
+
+
+
+        }
+        catch (IOException ex){
+            ex.printStackTrace();
+            return null;
+        }
+    }
+    private static List<String> findPersonalDetails() {
+        try{
+            String convertedPdfFile = new String(Files.readAllBytes(Paths.get("/home/ziyadbhombal/Documents/temp.txt")));
+            String[] stringArrayOfWords = getTokens(convertedPdfFile,false);
+//            find starting point for scanning text
+            for(String s : stringArrayOfWords){
+                p(s);
+            }
+            int indexOfFirstMatchedKeyword=0;
+            for(String eachWord : stringArrayOfWords){
+                if(PersonalDetails.contains(eachWord.toLowerCase())){
+                    break;
+                }
+                indexOfFirstMatchedKeyword++;
+            }
+
+//            find ending point for scanning text
+            List<String> listOfExcludedCorpus = new ArrayList<>(PersonalDetails.size()+Qualifications.size());
+            listOfExcludedCorpus.addAll(Qualifications);
+            listOfExcludedCorpus.addAll(Skills);
+            int endPoint=indexOfFirstMatchedKeyword;
+            for(int ix =indexOfFirstMatchedKeyword;ix<stringArrayOfWords.length;ix++){
+                if(listOfExcludedCorpus.contains(stringArrayOfWords[ix].toLowerCase())){
+                    break;
+                }
+                endPoint = ix;
+            }
+            p("Starting point "+indexOfFirstMatchedKeyword);
+            p("Ending point "+endPoint);
+            p("Size of array "+stringArrayOfWords.length);
+
+            BufferedWriter wr = new BufferedWriter(new FileWriter("logs/details.txt",false));
+            for (int ix =indexOfFirstMatchedKeyword ;ix<=endPoint; ix++){
+                wr.write(stringArrayOfWords[ix]);
+                wr.write(" ");
+            }
+            wr.flush();
+            wr.close();
+
+            return null;
+        }
+        catch (IOException ex){
+            ex.printStackTrace();
+            return null;
+        }
+    }
+
+
+
 }
